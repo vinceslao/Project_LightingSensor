@@ -7,18 +7,32 @@
 #include "pretty_printer.h"
 #include "ISL29125.h"
 
+// UUID per il servizio RGB
+#define UUID_RGB_SERVICE "12345678-1234-5678-1234-56789abcdef0"
+
+// UUID per le caratteristiche RGB
+#define UUID_RED_CHARACTERISTIC "12345678-1234-5678-1234-56789abcdef1"
+#define UUID_GREEN_CHARACTERISTIC "12345678-1234-5678-1234-56789abcdef2"
+#define UUID_BLUE_CHARACTERISTIC "12345678-1234-5678-1234-56789abcdef3"
+
+UUID uuid_list[] = { UUID_RGB_SERVICE,
+    UUID_RED_CHARACTERISTIC,
+    UUID_GREEN_CHARACTERISTIC,
+    UUID_BLUE_CHARACTERISTIC
+    };
+
 class RGBService {
 public:
     typedef uint16_t RGBType_t;
 
     RGBService(BLE& _ble) :
         ble(_ble),
-        redCharacteristic("00001111-0000-1000-8000-00805F9B34FB", &red, GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY),
-        greenCharacteristic("00002222-0000-1000-8000-00805F9B34FB", &green, GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY),
-        blueCharacteristic("00003333-0000-1000-8000-00805F9B34FB", &blue, GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY)
+        redCharacteristic(UUID_RED_CHARACTERISTIC, &red, GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY),
+        greenCharacteristic(UUID_GREEN_CHARACTERISTIC, &green, GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY),
+        blueCharacteristic(UUID_BLUE_CHARACTERISTIC, &blue, GattCharacteristic::BLE_GATT_CHAR_PROPERTIES_NOTIFY)
     {
         GattCharacteristic *charTable[] = { &redCharacteristic, &greenCharacteristic, &blueCharacteristic };
-        GattService rgbService(GattService::UUID_ENVIRONMENTAL_SERVICE, charTable, sizeof(charTable) / sizeof(GattCharacteristic *));
+        GattService rgbService(UUID_RGB_SERVICE, charTable, sizeof(charTable) / sizeof(GattCharacteristic *));
         ble.gattServer().addService(rgbService);
     }
 
@@ -51,10 +65,11 @@ private:
 /* device name */
 const static char DEVICE_NAME[] = "RGBSensor";
 
-/* list of services */
-#define UUID_RGB_SERVICE 0x181A
-#define UUID_DEVICE_INFORMATION_SERVICE 0x180A
-UUID uuid_list[] = { UUID_RGB_SERVICE, UUID_DEVICE_INFORMATION_SERVICE };
+
+ISL29125 RGBsensor(D14, D15);
+
+uint16_t GRBdata[3];
+bool data_present;
 
 /* Advertising data buffer */
 uint8_t adv_buffer[ble::LEGACY_ADVERTISING_MAX_SIZE];
@@ -91,16 +106,14 @@ public:
         _rgbService(ble)
         {}
     
-    void update_sensor_value() {
+
+    void updateRGB() {
         if (_connected) {
-            uint16_t red, green, blue;
-
-            /* Read the RGB sensor values */
-            read_ISL29125(red, green, blue);
-
-            _rgbService.updateRed(red);
-            _rgbService.updateGreen(green);
-            _rgbService.updateBlue(blue);
+            data_present = RGBsensor.Read(ISL29125_RGB, GRBdata);
+            if(data_present) printf("R: %i, G: %i, B: %i\r\n", GRBdata[1], GRBdata[0], GRBdata[2]);
+            _rgbService.updateRed(GRBdata[1]);
+            _rgbService.updateGreen(GRBdata[0]);
+            _rgbService.updateBlue(GRBdata[2]);
         }
     }
 
@@ -170,7 +183,7 @@ int main() {
 
     while (1) {
         if (sensorFlag) {
-            eventHandler->update_sensor_value();
+            eventHandler->updateRGB();
             sensorFlag = false;
         }
 
