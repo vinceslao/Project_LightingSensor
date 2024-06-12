@@ -1,0 +1,57 @@
+BUILD/NRF51_DK/ARMC6/mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/btle/custom/custom_helper.o: \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/btle/custom/custom_helper.cpp \
+  BUILD/NRF51_DK/ARMC6/mbed_config.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/btle/custom/custom_helper.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/common/common.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/projectconfig.h \
+  mbed-os/features/FEATURE_BLE/ble/GapAdvertisingData.h \
+  mbed-os/features/FEATURE_BLE/ble/blecommon.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/common/compiler.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/common/assertion.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/common/binary.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/common/ble_error.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_ranges.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_types.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_gap.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_svc.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_l2cap.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_err.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_error.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_gatt.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_gattc.h \
+  mbed-os/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF51/TARGET_MCU_NRF51822_UNIFIED/sdk/softdevice/s130/headers/nrf_ble_gatts.h \
+  mbed-os/features/FEATURE_BLE/ble/UUID.h \
+  mbed-os/features/FEATURE_BLE/ble/GattCharacteristic.h \
+  mbed-os/features/FEATURE_BLE/ble/Gap.h \
+  mbed-os/features/FEATURE_BLE/ble/BLERoles.h \
+  mbed-os/features/FEATURE_BLE/ble/common/StaticInterface.h \
+  mbed-os/features/FEATURE_BLE/ble/BLETypes.h \
+  mbed-os/features/FEATURE_BLE/ble/SafeEnum.h \
+  mbed-os/features/FEATURE_BLE/ble/ArrayView.h \
+  mbed-os/platform/mbed_assert.h mbed-os/platform/mbed_preprocessor.h \
+  mbed-os/platform/mbed_toolchain.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/Types.h \
+  mbed-os/features/FEATURE_BLE/ble/common/Duration.h \
+  mbed-os/features/FEATURE_BLE/ble/common/Bounded.h \
+  mbed-os/features/FEATURE_BLE/ble/BLEProtocol.h \
+  mbed-os/features/FEATURE_BLE/ble/GapAdvertisingParams.h \
+  mbed-os/features/FEATURE_BLE/ble/GapScanningParams.h \
+  mbed-os/features/FEATURE_BLE/ble/GapEvents.h \
+  mbed-os/features/FEATURE_BLE/ble/CallChainOfFunctionPointersWithContext.h \
+  mbed-os/features/FEATURE_BLE/ble/FunctionPointerWithContext.h \
+  mbed-os/features/FEATURE_BLE/ble/SafeBool.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/Gap.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/AdvertisingDataBuilder.h \
+  mbed-os/platform/Span.h mbed-os/platform/NonCopyable.h \
+  mbed-os/platform/mbed_debug.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/AdvertisingDataTypes.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/AdvertisingDataSimpleBuilder.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/ConnectionParameters.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/ScanParameters.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/AdvertisingParameters.h \
+  mbed-os/features/FEATURE_BLE/ble/gap/Events.h \
+  mbed-os/features/FEATURE_BLE/targets/TARGET_NORDIC/TARGET_NORDIC_SOFTDEVICE/TARGET_NRF51/source/BleImplementationForward.h \
+  mbed-os/features/FEATURE_BLE/ble/SecurityManager.h \
+  mbed-os/features/FEATURE_BLE/ble/GattAttribute.h \
+  mbed-os/features/FEATURE_BLE/ble/GattCallbackParamTypes.h

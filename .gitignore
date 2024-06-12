@@ -1,7 +1,2 @@
-.build
-.mbed
-projectfiles
-*.py*
-mbed-os
-BUILD
-shields
+/mbed-os
+/shields/TARGET_CORDIO_BLUENRG

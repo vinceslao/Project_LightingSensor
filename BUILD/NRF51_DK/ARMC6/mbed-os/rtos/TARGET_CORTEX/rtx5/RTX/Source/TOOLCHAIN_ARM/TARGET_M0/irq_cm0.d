@@ -1,0 +1,3 @@
+BUILD/NRF51_DK/ARMC6/mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_ARM/TARGET_M0/irq_cm0.o: \
+  mbed-os/rtos/TARGET_CORTEX/rtx5/RTX/Source/TOOLCHAIN_ARM/TARGET_M0/irq_cm0.S \
+  BUILD/NRF51_DK/ARMC6/mbed_config.h
