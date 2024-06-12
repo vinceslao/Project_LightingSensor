@@ -1,5 +1,7 @@
-BUILD
+.build
 .mbed
+projectfiles
+*.py*
 mbed-os
-shields/TARGET_CORDIO_BLUENRG
-ISL29125
+BUILD
+shields
